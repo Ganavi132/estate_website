@@ -32,35 +32,98 @@
   }
 
   .menu-button {
-    font-size: 30px;
+    font-size: 40px;
     cursor: pointer;
     background: none;
     border: none;
     color: white;
-  }
-
-  /* Menu Styles */
-  .menu {
     display: none;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   }
 
-  .menu a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: black;
+  .menu{
+    display: flex;
+    gap: 20px;
   }
+
+  .menu a{
+    color: white;
+    text-decoration: none;
+  }
+
+  .menu a:hover{
+    color: #f0f0f0;
+  }
+
+  @media sceen and (max-width: 768px){
+    .menu-button{
+      display: block;
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      background: white;
+      color:#070707;
+      border-radius: 5px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      flex-direction: column;
+      width: 300px;
+    }
+    .menu a {
+      padding: 10px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+    .menu a:last-child{
+      border-bottom: none;
+    }
+  }
+
+  .menu.show{
+    display: block;
+  }
+
 
   .menu a:hover {
     background: #f0f0f0;
   }
+
+  .mobile-only {
+    display: none; /* Hide by default */
+  }
+    
+  @media screen and (max-width: 768px) {
+    .mobile-only{
+      width: 100vw;
+      height: 30vh;
+      object-fit: cover;
+      display: block;
+      margin-top: 70px;
+    }
+  }
+
+  .mobile-round-images{
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .mobile-round-images{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .mobile-round-images img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit:cover; 
+    }
+  }
+
 
   /* Main Content Grid */
   main {
@@ -85,6 +148,12 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    .top-left{
+      display: none;
+    }
   }
 
   .top-left .box {
